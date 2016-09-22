@@ -64,8 +64,11 @@ define(["require", "exports", "vs/editor/editor.main"], function (require, expor
         return { newPos: pos, successful: startPos != pos, needMoreLookahead: false };
     }
     function readOptionalIdentifier(buffer, end, pos) {
+        var start = pos;
         while (pos < end) {
-            if (('a' <= buffer[pos] && buffer[pos] <= 'z') || ('A' <= buffer[pos] && buffer[pos] <= 'Z')) {
+            if (('0' <= buffer[pos] && buffer[pos] <= '9')
+                || ('a' <= buffer[pos] && buffer[pos] <= 'z')
+                || ('A' <= buffer[pos] && buffer[pos] <= 'Z') || buffer[pos] == '!') {
                 pos++;
             }
             else
@@ -79,9 +82,19 @@ define(["require", "exports", "vs/editor/editor.main"], function (require, expor
         return { newPos: result.newPos, successful: result.newPos != startPos, needMoreLookahead: result.needMoreLookahead };
     }
     function readPrimitive(buffer, end, pos) {
-        // for now good enough
-        var result = readRequiredIdentifier(buffer, end, pos);
-        return result;
+        var start = pos;
+        while (pos < end) {
+            if (('a' <= buffer[pos] && buffer[pos] <= 'z')
+                || ('A' <= buffer[pos] && buffer[pos] <= 'Z')
+                || ('0' <= buffer[pos] && buffer[pos] <= '9')
+                || buffer[pos] == '.'
+                || buffer[pos] == '!') {
+                pos++;
+            }
+            else
+                break;
+        }
+        return { newPos: pos, successful: start != pos, needMoreLookahead: pos == end };
     }
     function readMatchIdentifier(buffer, end, pos, identifier) {
         var strOffset = 0;

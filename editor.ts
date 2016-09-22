@@ -94,12 +94,13 @@ function readWhitespace(buffer: string, end: number, pos: number): { newPos: num
 
     return { newPos: pos, successful: startPos != pos, needMoreLookahead: false };
 }
-
 function readOptionalIdentifier(buffer: string, end: number, pos: number): { newPos: number, successful: boolean, needMoreLookahead: boolean } {
+    var start = pos;
     while (pos < end)
     {
-        if (('a' <= buffer[pos] && buffer[pos] <= 'z') || ('A' <= buffer[pos] && buffer[pos] <= 'Z'))
-        {
+        if (('0' <= buffer[pos] && buffer[pos] <= '9') 
+			|| ('a' <= buffer[pos] && buffer[pos] <= 'z') 
+			|| ('A' <= buffer[pos] && buffer[pos] <= 'Z')  || buffer[pos] == '!') {
             pos++;
         }
         else break;
@@ -115,10 +116,22 @@ function readRequiredIdentifier(buffer: string, end: number, pos: number): { new
 }
 
 function readPrimitive(buffer: string, end: number, pos: number): { newPos: number, successful: boolean, needMoreLookahead: boolean } {
-    // for now good enough
-    var result = readRequiredIdentifier(buffer, end, pos);
-    return result;
+    var start = pos;
+    while (pos < end)
+    {
+        if (('a' <= buffer[pos] && buffer[pos] <= 'z') 
+			|| ('A' <= buffer[pos] && buffer[pos] <= 'Z') 
+			|| ('0' <= buffer[pos] && buffer[pos] <= '9') 
+			|| buffer[pos] == '.'
+			|| buffer[pos] == '!') {
+            pos++;
+        }
+        else break;
+    }
+
+    return { newPos: pos, successful: start != pos, needMoreLookahead: pos == end };
 }
+
 
 function readMatchIdentifier(buffer: string, end: number, pos: number, identifier: string): { newPos: number, successful: boolean, needMoreLookahead: boolean } {
     var strOffset = 0;
