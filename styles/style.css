@@ -1,0 +1,47 @@
+.monaco-editor .token.Invalid {
+  color: red; }
+
+.monaco-editor .token.HeredocStringDelimiter, .monaco-editor .token.HeredocStringStart1, .monaco-editor .token.HeredocStringStart2, .monaco-editor .token.HeredocStringEnd1, .monaco-editor .token.HeredocStringEnd2 {
+  color: #575757; }
+
+.monaco-editor .token.HeredocString {
+  color: #0339ca; }
+
+.monaco-editor .token.StringText {
+  color: #0339ca; }
+
+.monaco-editor .token.MarkupString {
+  color: #5878aa; }
+
+.monaco-editor .token.CommentStart1 {
+  color: #08cb00; }
+
+.monaco-editor .token.CommentDelimiter {
+  color: #08cb00; }
+
+.monaco-editor .token.CommentStart2 {
+  color: #08cb00; }
+
+.monaco-editor .token.CommentEnd1 {
+  color: #08cb00; }
+
+.monaco-editor .token.CommentEnd2 {
+  color: #08cb00; }
+
+.monaco-editor .token.Comment {
+  color: #08cb00; }
+
+.monaco-editor .token.TypePrefix {
+  color: #49afaf; }
+
+.monaco-editor .token.TypeName {
+  color: #2b91af; }
+
+.monaco-editor .token.AttributePrefix {
+  color: #fd971f; }
+
+.monaco-editor .token.AttributeName {
+  color: #e9830b; }
+
+.monaco-editor .token.Primitive {
+  color: #d631d9; }

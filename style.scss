@@ -1,0 +1,78 @@
+.monaco-editor {
+    .token.Invalid {
+        color: red;
+    }
+    .token.HeredocStringDelimiter, .token.HeredocStringStart1, .token.HeredocStringStart2, .token.HeredocStringEnd1, .token.HeredocStringEnd2 {
+        color: rgb(87, 87, 87)
+    }
+    .token.HeredocStringEscapeSeq {
+    }
+    .token.HeredocString {
+        color: rgb(3, 57, 202)
+    }
+    .token.StringStart {
+    }
+    .token.StringEnd {
+    }
+    .token.StringText {
+        color: rgb(3, 57, 202)
+    }
+    .token.ArrayStart {
+    }
+    .token.ArrayEnd {
+    }
+    .token.MarkupArrayStart {
+    }
+    .token.MarkupArrayEnd {
+    }
+    .token.MarkupString {
+        color: rgb(88, 120, 170)
+    }
+    .token.CommentStart1 {
+        color: rgb(8, 203, 0)
+    }
+    .token.CommentDelimiter {
+        color: rgb(8, 203, 0)
+    }
+    .token.CommentStart2 {
+        color: rgb(8, 203, 0)
+    }
+    .token.CommentEnd1 {
+        color: rgb(8, 203, 0)
+    }
+    .token.CommentEnd2 {
+        color: rgb(8, 203, 0)
+    }
+    .token.Comment {
+        color: rgb(8, 203, 0)
+    }
+    .token.TypePrefix {
+        color: rgb(73, 175, 175)
+    }
+    .token.TypeName {
+        color: rgb(43, 145, 175)
+    }
+    .token.ObjectStart {
+    }
+    .token.ObjectEnd {
+    }
+    .token.AttributePrefix {
+        color: rgb(253, 151, 31)
+    }
+    .token.PrefixSeparator {
+    }
+    .token.AttributeName {
+        color: rgb(233, 131, 11)
+    }
+    .token.AttributeColon {
+    }
+    .token.EscapeSeqStart {
+    }
+    .token.EscapeSeq {
+    }
+    .token.Invalid {
+    }
+    .token.Primitive {
+        color: rgb(214, 49, 217)
+    }
+}
